@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<%
+String name = (String)session.getAttribute("name");
+if ((name != null && !name.equals(""))) 
+{;}
+else
+{response.sendRedirect("LoginPage.jsp");
+session.invalidate();}%>
+<body>
+ <form action="/LibraryManagementSystem/SearchServlet" method="post">
+<select name="searchBy">
+  <option value="book_title">Title</option>
+  <option value="publication_name">Publisher</option>
+  <option value="author_name">Author</option>
+ </select>
+details<input type="text" name="details"><br>
+
+<input type="submit" value="enter">
+</form>
+
+</body>
+</html>
